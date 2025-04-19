@@ -1,0 +1,123 @@
+Introduction
+  Test Plan Objective: Verify user can successfully add a product to the cart, remove it, add a different product to the cart, checkout, and receive an order confirmation.
+  Scope of Testing: This test will focus on the user experience. While incorrect product descriptions or images will be noted, the scope is on the functionality of moving from one step to another in the user experience. 
+
+Test Items
+  - Adding products to the cart
+  - Removing products from the cart
+  - Viewing the cart contents
+  - Navigating to the checkout page
+  - Entering personal and shipping information
+  - Selecting a payment method and submitting the order
+  - Receiving and verifying the order confirmation message
+  - Navigating between product categories
+
+Test Criteria
+  Entry Criteria: 
+    - The website (https://automationexercise.com/) is accessible and fully functional.
+    - User information and test products are prepared.
+    - Cypress and other tools are installed and configured correctly.
+    - Website code is complete and stable with no major bugs blocking the flow from product page to checkout.
+  Exit Criteria:
+    - All test cases have been executed.
+    - All high-priority bugs have been reported and addressed.
+    - All test cases pass.
+    - Test report is written and submitted.
+    - No crucial user functions are broken.
+
+Resources
+  Human Resources:
+    - Jamie: QA
+  Software and Hardware: 
+    - Website: https://automationexercise.com/
+    - Cypress
+
+Schedule
+  - Monday: Writing of test plan and test cases completed;
+  - Tuesday: Testing code written for each test case/scenario
+  - Wednesday: Tests performed, analysis written, project submitted
+
+Test Environment
+  - Browser: Chrome
+  - OS: Windows 11/MacOS Monterey
+  - Test Framework: Cypress
+  - Website: Automation Exercise (https://automationexercise.com/)
+
+Roles and Responsibilities
+  - QA: Jamie - write test plan, test cases, and implement testing via Cypress
+
+Test Cases
+  - Test Case 1: Product Purchase Flow
+    - Navigate to home page
+    - Navigate to Products page
+    - Select Kids from side menu
+    - Navigate to tops and shirts
+    - View product details by selecting "View Product" of preferred product
+    - Verify product page displays
+    - Add to Cart
+    - Go to Cart and verify product has been added
+    - Proceed to checkout
+    - Register new user
+    - Enter shipped details and payment information
+    - Submit the order
+    - Verify confirmation message
+    Expected Results: User sees an order confirmation message and order number.
+
+  - Test Case 2: Search with No Results
+    - Navigate to home page
+    - Navigate to Products page
+    - Enter "nonameshirt" into search bar
+    - Submit search
+  Expected Result: User sees message "No results found."
+
+  - Test Case 3: 
+    - Navigate to home page
+    - Navigate to Product page
+    - Add to Cart "Blue Top"
+    - Select View Cart on pop to navigate to cart
+    - Remove the "Blue Top" by clicking on the X button
+    - Verify page announces Cart is Empty with option to go back to products page
+    - Navigate to products by clicking Here
+    - Add to Cart "Men Tshirt"
+    - Verify product is in cart by selecting View Cart
+    Expected Result: User has only Men TShirt in cart.
+
+  - Edge Case 1: Invalid Characters in Search
+    - Navigate to home page
+    - Navigate to Products
+    - Enter special characters into search bar (i.e. !@#$%^&*)
+    - Submit search
+    Expected Result: User sees message "Invalid Search" or "No results found"
+
+  - Edge Case 2: Empty Cart Checkout
+    - Navigate to home page
+    - Navigate to Cart
+  Expected Result: User is not able to proceed to checkout.
+
+  - Edge Case 3: Removing Duplicate Products Added to Cart
+    - Navigate to home page
+    - Navigate to product page
+    - Add to Cart Sleeveless Dress 
+    - Select Continue Shopping
+    - Repeat Add to Cart and Continue shopping steps 4 more times
+    - Navigate to cart
+    - Verify 5 of the same products are in cart
+    - Remove extra items be decreasing total by 4
+  Expected Result: User has 1 item in cart after removing duplicates.
+
+  - Accessibility Case: Verify Homepage Accessibility
+    - Navigate to home page
+    - Enter accessibilty testing tool axe
+    - Run accessibility test
+    Expected Result: Home page is free of major accessibility problems.
+
+Risks and Mitigations
+  - Website is unavailable -> have a backup website to test
+  - Dynamic content and site changes -> use stable selectors, update test scripts if needed
+
+Tools and Techniques
+  - Tools: VS Code, Cypress
+  - Technique: automated testing via Cypress
+
+Reporting and Communication
+  - Testing will be documented by Github link and shared with SSM via Google classroom project submission.
